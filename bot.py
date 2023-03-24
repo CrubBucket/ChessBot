@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix=settings['prefix'])
 
 
 async def spam(channel):
-    gena = await bot.fetch_user(291212394120871936)
+    gena = await bot.fetch_user(00000000000)
     with open('games_to_comment.txt', 'r') as file:
         lines = file.readlines()
     for i in range(len(lines) - 2, 6, -9):
@@ -38,10 +38,9 @@ async def spam(channel):
                 troll = file.readlines()
             main_output = f'{choice(troll[0:4])[0:-1]} {gena.mention} {choice(troll[4:8])[0:-1]} {choice(troll[8:12])[0:-1]} **{op_name}** в {time_control}! **{choice(troll[12:])[0:-1]}**'
             pts_output = f'Теперь у него аж **{rating} PTS\'ов**, а у оппонента всего **{op_rating}!**'
-            ebalo_output = f'Ну что, **{op_name}** - **ЕБАЛО СВОЕ ПРЕДСТАВИЛ?!**'
             id_output = f'**ID каточки:** {game_id}'
             sus_output = discord.Embed(title="ВИН!",
-                                       description=main_output + '\n' + '\n' + pts_output + '\n' + '\n' + ebalo_output+ '\n' + '\n' + id_output,
+                                       description=main_output + '\n' + '\n' + pts_output + '\n' + '\n' + id_output,
                                        colour=0x00e600)
             await channel.send(embed=sus_output)
         if result == 'draw':
@@ -69,7 +68,6 @@ async def on_ready():
             for guild in bot.guilds:
                 for channel in guild.text_channels:
                     if channel.id == int(channel_id):
-                        #await channel.send('Ща высру')
                         await spam(channel)
 
 
