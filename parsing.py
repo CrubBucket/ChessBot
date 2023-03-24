@@ -4,7 +4,7 @@ import time
 import requests
 from chessdotcom import get_player_game_archives
 
-name = 'thegreatcombinaator'
+name = 'player'
 
 
 def test(name):
@@ -15,19 +15,7 @@ def test(name):
     # month_games = requests.get(url).json()
     #game = month_games['games'][-1]
     print(url)
-    # print('Time controll:', game['time_control'])          # TIME CONTROL
-    # print('Time class:', game['time_class'])               # TIME CLASS
-    # print('Rules:', game['rules'])                         # RULES
-    # print('Rated?:', game['rated'])                        # RATED?
-    # print('White result:', game['white']['result'])        # WHITE RESULT
-    # print('White username:', game['white']['username'])    # WHITE USERNAME
-    # print('White rating:', game['white']['rating'])        # WHITE RATING
-    # print(month_games['games'])
-    # print(len(month_games['games']))
-    # game_id = game['url'].split('/')[-1]                   # GAME ID
-    # print(game_id)
-    # # with open('last_id.txt', 'w') as file:
-    # #     file.write(game_id)
+
 
 
 def get_missing(name):
@@ -76,8 +64,6 @@ def games_append(games, name):
                     file.write('lose\nblack\n')
 
 
-#insufficient
-#repetition
 #######################################################################################################################
                 file.write(game['time_class'] + '\n')               #Тайм - контроль
 #######################################################################################################################
